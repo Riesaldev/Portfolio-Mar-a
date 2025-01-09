@@ -1,4 +1,4 @@
-# Portfolio de María
+# Portfolio de María Isabel Begueri.
 
 Este es el repositorio del portafolio de María.
 ## Contenido
