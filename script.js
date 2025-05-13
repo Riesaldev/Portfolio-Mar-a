@@ -126,3 +126,20 @@ document.addEventListener( 'DOMContentLoaded', () => {
     const sendMessageButton = document.querySelector( '.formBtn .btn' );
     sendMessageButton.addEventListener( 'click', openEmail );
 } );
+
+//header scroll effect
+window.addEventListener( "scroll", function () {
+    const header = document.querySelector( "header" );
+
+    if ( window.scrollY > 50 )
+    {  // Detecta el desplazamiento
+        header.style.background = "rgba(255, 255, 255, 0.3)";
+        header.style.backdropFilter = "blur(15px)";
+        header.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.2)";
+    } else
+    {
+        header.style.background = "rgba(255, 255, 255, 0.1)";
+        header.style.backdropFilter = "blur(10px)";
+        header.style.boxShadow = "none";
+    }
+} );
