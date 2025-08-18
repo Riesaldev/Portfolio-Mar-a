@@ -11,12 +11,12 @@
 
 :root {
     --text-color: #f5f5f5;
-    --hover-color: rgb(152, 255, 18);
-    --bg-color: rgb(46, 11, 44);
-    --second-bg-color: #292a33;
+    --hover-color: #e9d8a6;
+    --bg-color: #6b9080;
+    --second-bg-color: #2f4858;
     --big-font: 2.5rem;
     --normal-font: 2rem;
-    --neon-box-shadows: 0 0 10px rgb(152, 255, 18, 0.3), 0 0 20px rgb(152, 255, 18, 0.3), 0 0 30px rgb(152, 255, 18, 0.3), 0 0 40px rgb(152, 255, 18, 0.3), 0 0 70px rgb(152, 255, 18, 0.3);
+    --neon-box-shadows: 0 0 10px #e9d8a6, 0 0 20px #e9d8a6;
 }
 
 ::-webkit-scrollbar {
@@ -50,12 +50,14 @@ header {
     width: 100%;
     padding: 20px 10%;
     background: var(--bg-color);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: background 0.4s ease-in-out, backdrop-filter 0.4s ease-in-out;
 }
 
 header.sticky {
     background: var(--bg-color);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -207,7 +209,7 @@ p {
     overflow: hidden;
     z-index: 1;
     border: 3px solid var(--hover-color);
-    overflow: hidden;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -306,6 +308,8 @@ p {
     width: 100%;
     max-width: 400px;
     height: auto;
+    -webkit-mask-image: radial-gradient(circle, rgba(233, 216, 166, 1) 68%, rgba(233, 216, 166, 0) 78%);
+    mask-image: radial-gradient(circle, rgba(233, 216, 166, 1) 68%, rgba(233, 216, 166, 0) 78%);
 }
 
 .liquid-shape {
@@ -416,6 +420,14 @@ p {
 .info-about3 {
     left: 15%;
     bottom: 5%;
+}
+
+.img-about {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    -webkit-mask-image: radial-gradient(circle, rgba(233, 216, 166, 1) 68%, rgba(233, 216, 166, 0) 82%);
+    mask-image: radial-gradient(circle, rgba(233, 216, 166, 1) 65%, rgba(233, 216, 166, 0) 80%);
 }
 
 .img-about span {
@@ -730,26 +742,30 @@ footer {
     width: 100%;
     padding: 1.5rem 10%;
     display: flex;
+    justify-content: center;
     align-items: center;
     justify-items: center;
-    justify-content: space-around;
     background-color: var(--second-bg-color);
+    
 }
 
 footer p {
     color: #bdbdbd;
-    display: flex;
-    text-align: center;
+    display: inline-flex;
+    text-align: right;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
     padding-bottom: 2rem;
+    margin-right: 10px;
+
 
 }
 
 footer a {
     color: var(--hover-color);
     text-decoration: underline;
+    padding-right: 10px;
 }
 
 footer .button-link {
@@ -758,6 +774,7 @@ footer .button-link {
     align-items: center;
     color: var(--text-color);
     background: var(--hover-color);
+    margin-left: 30px;
     padding: .2rem;
     border-radius: 10px;
     position: relative;
@@ -1078,11 +1095,18 @@ footer .button-link i {
     }
 
     .btn-box {
-        margin-top: 2rem;
+        height: 100px;
         align-items: center;
         flex-direction: column;
     }
 
+    .social-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 10px;
+    }
 
     .about {
         flex-direction: column;
@@ -1119,6 +1143,10 @@ footer .button-link i {
         font-size: 1.2rem;
     }
 
+    .service-btn {
+        height: 40px;
+    }
+
     .skill-main h3 {
         font-size: 1.5rem;
     }
@@ -1127,28 +1155,26 @@ footer .button-link i {
         padding: 0 1rem;
     }
 
+    .formBtn {
+        height: 40px;
+    }
+
     footer {
         flex-direction: column;
         text-align: center;
     }
 
     footer p {
-        margin-bottom: 1rem;
-        word-break: break-word;
         max-width: 100vw;
-        box-sizing: border-box;
-        overflow-wrap: break-word;
-        line-height: 1.4;
-        padding-left: 0;
-        padding-right: 0;
+        line-height: 1.6;
         width: 100%;
     }
 
     footer .button-link {
         padding: 0.5rem;
         font-size: 1rem;
-        width: 100%;
-        max-width: 300px;
+        height: 40px;
+        width: 25%;
     }
 
     footer.bx {
@@ -1171,10 +1197,7 @@ footer .button-link i {
         display: none;
     }
 
-    .social-icons {
-        margin: 1rem;
-        justify-content: center;
-    }
+    
 
     .info-about2 {
         right: 70%;

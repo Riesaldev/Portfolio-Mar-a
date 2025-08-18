@@ -67,7 +67,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
     const activeMenu = () => {
         let len = sections.length;
-        while ( --len && window.scrollY + 97 < sections[ len ].offsetTop ) { }
+        while ( --len && window.scrollY + 97 < sections[ len ].offsetTop );
         menuLi.forEach( sec => sec.classList.remove( 'active' ) );
         menuLi[ len ].classList.add( 'active' );
     };
@@ -80,7 +80,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
     const pointer = document.createElement( 'span' );
     pointer.className = 'pointer';
     pointer.textContent = '|';
-    h1.insertBefore( pointer, h1.firstChild );
+    h1.appendChild( pointer );
 
     setInterval( () => {
         pointer.style.opacity = pointer.style.opacity === '0' ? '1' : '0';
